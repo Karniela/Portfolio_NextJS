@@ -1,6 +1,12 @@
 {
+<<<<<<< HEAD
   "/": "pages/index.html",
   "/links": "pages/links.html",
+=======
+  "/_app": "pages/_app.js",
+  "/links": "pages/links.html",
+  "/": "pages/index.html",
+>>>>>>> 026036b48fe2e59265ce12f70913b738baf0227a
   "/_error": "pages/_error.js",
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
