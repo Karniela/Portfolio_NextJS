@@ -17,17 +17,17 @@ function _asyncToGenerator(fn) {
         var self = this, args = arguments;
         return new Promise(function(resolve, reject) {
             var gen = fn.apply(self, args);
-            function .next(value) {
-                asyncGeneratorStep(gen, resolve, reject, .next, _throw, "next", value);
+            function _next(value) {
+                asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
             }
             function _throw(err) {
-                asyncGeneratorStep(gen, resolve, reject, .next, _throw, "throw", err);
+                asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
             }
-            .next(undefined);
+            _next(undefined);
         });
     };
 }
-function asyncGeneratorStep(gen, resolve, reject, .next, _throw, key, arg) {
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
     try {
         var info = gen[key](arg);
         var value = info.value;
@@ -38,7 +38,7 @@ function asyncGeneratorStep(gen, resolve, reject, .next, _throw, key, arg) {
     if (info.done) {
         resolve(value);
     } else {
-        Promise.resolve(value).then(.next, _throw);
+        Promise.resolve(value).then(_next, _throw);
     }
 }
 
@@ -933,7 +933,7 @@ function getFilesForRoute(assetPrefix, route) {
         if (!(route in manifest)) {
             throw markAssetError(new Error(`Failed to lookup route: ${route}`));
         }
-        const allFiles = manifest[route].map((entry)=>assetPrefix + "/.next/" + encodeURI(entry));
+        const allFiles = manifest[route].map((entry)=>assetPrefix + "/_next/" + encodeURI(entry));
         return {
             scripts: allFiles.filter((v)=>v.endsWith(".js")).map((v)=>(0, _trustedTypes).__unsafeCreateTrustedScriptURL(v)),
             css: allFiles.filter((v)=>v.endsWith(".css"))
@@ -1273,7 +1273,7 @@ function Script(props) {
     }
     return null;
 }
-Object.defineProperty(Script, "_.nextScript", {
+Object.defineProperty(Script, "__nextScript", {
     value: true
 });
 var _default = Script;
@@ -1658,7 +1658,7 @@ function getMiddlewareData(source, response, options) {
     const rewriteHeader = response.headers.get("x-nextjs-rewrite");
     let rewriteTarget = rewriteHeader || response.headers.get("x-nextjs-matched-path");
     const matchedPath = response.headers.get("x-matched-path");
-    if (matchedPath && !rewriteTarget && !matchedPath.includes("_.next_data_catchall") && !matchedPath.includes("/_error") && !matchedPath.includes("/404")) {
+    if (matchedPath && !rewriteTarget && !matchedPath.includes("__next_data_catchall") && !matchedPath.includes("/_error") && !matchedPath.includes("/404")) {
         // leverage x-matched-path to detect next.config.js rewrites
         rewriteTarget = matchedPath;
     }
@@ -2227,7 +2227,7 @@ class Router {
                 }
                 Router.events.emit("beforeHistoryChange", as, routeProps);
                 _this.changeState(method, url, as, options);
-                if (isQueryUpdating && pathname === "/_error" && ((ref2 = self._.next_DATA__.props) == null ? void 0 : (ref3 = ref2.pageProps) == null ? void 0 : ref3.statusCode) === 500 && (props == null ? void 0 : props.pageProps)) {
+                if (isQueryUpdating && pathname === "/_error" && ((ref2 = self.__NEXT_DATA__.props) == null ? void 0 : (ref3 = ref2.pageProps) == null ? void 0 : ref3.statusCode) === 500 && (props == null ? void 0 : props.pageProps)) {
                     // ensure statusCode is still correct for static 500 page
                     // when updating query information
                     props.pageProps.statusCode = 500;
@@ -2429,7 +2429,7 @@ class Router {
                         styleSheets: res.styleSheets,
                         __N_SSG: res.mod.__N_SSG,
                         __N_SSP: res.mod.__N_SSP,
-                        __N_RSC: !!res.mod._.next_rsc__
+                        __N_RSC: !!res.mod.__next_rsc__
                     })));
                 if (false) {}
                 /**
@@ -2779,7 +2779,7 @@ class Router {
         this.pageLoader = pageLoader;
         // if auto prerendered and dynamic route wait to update asPath
         // until after mount to prevent hydration mismatch
-        const autoExportDynamic = (0, _isDynamic).isDynamicRoute(pathname1) && self._.next_DATA__.autoExport;
+        const autoExportDynamic = (0, _isDynamic).isDynamicRoute(pathname1) && self.__NEXT_DATA__.autoExport;
         this.basePath =  false || "";
         this.sub = subscription;
         this.clc = null;
@@ -2788,7 +2788,7 @@ class Router {
         // back from external site
         this.isSsr = true;
         this.isLocaleDomain = false;
-        this.isReady = !!(self._.next_DATA__.gssp || self._.next_DATA__.gip || self._.next_DATA__.appGip && !self._.next_DATA__.gsp || !autoExportDynamic && !self.location.search && !false);
+        this.isReady = !!(self.__NEXT_DATA__.gssp || self.__NEXT_DATA__.gip || self.__NEXT_DATA__.appGip && !self.__NEXT_DATA__.gsp || !autoExportDynamic && !self.location.search && !false);
         if (false) {}
         this.state = {
             route,

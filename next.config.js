@@ -29,7 +29,7 @@ const nextConfig = {
   reactStrictMode: true,
   output: 'export',
   basePath: basePath,
-  assetPrefix: basePath,
+  //assetPrefix: basePath,
   publicRuntimeConfig: {
     basePath: basePath,
   },
