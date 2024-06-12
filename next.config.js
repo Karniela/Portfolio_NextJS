@@ -27,6 +27,7 @@ console.warn(
 
 const nextConfig = {
   reactStrictMode: true,
+  output: 'export',
   basePath: basePath,
   assetPrefix: basePath,
   publicRuntimeConfig: {
