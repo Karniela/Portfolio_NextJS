@@ -101,7 +101,7 @@ function getPolyfillScripts(context, props) {
             nonce: props.nonce,
             crossOrigin: props.crossOrigin || crossOrigin,
             noModule: true,
-            src: `${assetPrefix}/_next/${polyfill}${devOnlyCacheBusterQueryString}`
+            src: `${assetPrefix}/.next/${polyfill}${devOnlyCacheBusterQueryString}`
         }));
 }
 function hasComponentProps(child) {
@@ -140,7 +140,7 @@ function getDynamicChunks(context, props, files) {
             async: !isDevelopment && disableOptimizedLoading,
             defer: !disableOptimizedLoading,
             key: file,
-            src: `${assetPrefix}/_next/${encodeURI(file)}${devOnlyCacheBusterQueryString}`,
+            src: `${assetPrefix}/.next/${encodeURI(file)}${devOnlyCacheBusterQueryString}`,
             nonce: props.nonce,
             crossOrigin: props.crossOrigin || crossOrigin
         });
@@ -157,7 +157,7 @@ function getScripts(context, props, files) {
     ].map((file)=>{
         return /*#__PURE__*/ _react.default.createElement("script", {
             key: file,
-            src: `${assetPrefix}/_next/${encodeURI(file)}${devOnlyCacheBusterQueryString}`,
+            src: `${assetPrefix}/.next/${encodeURI(file)}${devOnlyCacheBusterQueryString}`,
             nonce: props.nonce,
             async: !isDevelopment && disableOptimizedLoading,
             defer: !disableOptimizedLoading,
@@ -184,7 +184,7 @@ function getPreNextWorkerScripts(context, props) {
             dangerouslySetInnerHTML: {
                 __html: `
             partytown = {
-              lib: "${assetPrefix}/_next/static/~partytown/"
+              lib: "${assetPrefix}/.next/static/~partytown/"
             };
           `
             }
@@ -276,7 +276,7 @@ class Head extends _react.Component {
                     key: `${file}-preload`,
                     nonce: this.props.nonce,
                     rel: "preload",
-                    href: `${assetPrefix}/_next/${encodeURI(file)}${devOnlyCacheBusterQueryString}`,
+                    href: `${assetPrefix}/.next/${encodeURI(file)}${devOnlyCacheBusterQueryString}`,
                     as: "style",
                     crossOrigin: this.props.crossOrigin || crossOrigin
                 }));
@@ -286,7 +286,7 @@ class Head extends _react.Component {
                 key: file,
                 nonce: this.props.nonce,
                 rel: "stylesheet",
-                href: `${assetPrefix}/_next/${encodeURI(file)}${devOnlyCacheBusterQueryString}`,
+                href: `${assetPrefix}/.next/${encodeURI(file)}${devOnlyCacheBusterQueryString}`,
                 crossOrigin: this.props.crossOrigin || crossOrigin,
                 "data-n-g": isUnmanagedFile ? undefined : isSharedFile ? "" : undefined,
                 "data-n-p": isUnmanagedFile ? undefined : isSharedFile ? undefined : ""
@@ -306,7 +306,7 @@ class Head extends _react.Component {
             return /*#__PURE__*/ _react.default.createElement("link", {
                 rel: "preload",
                 key: file,
-                href: `${assetPrefix}/_next/${encodeURI(file)}${devOnlyCacheBusterQueryString}`,
+                href: `${assetPrefix}/.next/${encodeURI(file)}${devOnlyCacheBusterQueryString}`,
                 as: "script",
                 nonce: this.props.nonce,
                 crossOrigin: this.props.crossOrigin || crossOrigin
@@ -332,7 +332,7 @@ class Head extends _react.Component {
                     key: file,
                     nonce: this.props.nonce,
                     rel: "preload",
-                    href: `${assetPrefix}/_next/${encodeURI(file)}${devOnlyCacheBusterQueryString}`,
+                    href: `${assetPrefix}/.next/${encodeURI(file)}${devOnlyCacheBusterQueryString}`,
                     as: "script",
                     crossOrigin: this.props.crossOrigin || crossOrigin
                 })), 
@@ -613,7 +613,7 @@ class NextScript extends _react.Component {
                 "data-ampdevmode": true
             }), ampDevFiles.map((file)=>/*#__PURE__*/ _react.default.createElement("script", {
                     key: file,
-                    src: `${assetPrefix}/_next/${file}${devOnlyCacheBusterQueryString}`,
+                    src: `${assetPrefix}/.next/${file}${devOnlyCacheBusterQueryString}`,
                     nonce: this.props.nonce,
                     crossOrigin: this.props.crossOrigin || crossOrigin,
                     "data-ampdevmode": true
@@ -623,7 +623,7 @@ class NextScript extends _react.Component {
         const files = getDocumentFiles(this.context.buildManifest, this.context.__NEXT_DATA__.page,  true && inAmpMode);
         return /*#__PURE__*/ _react.default.createElement(_react.default.Fragment, null, !disableRuntimeJS && buildManifest.devFiles ? buildManifest.devFiles.map((file)=>/*#__PURE__*/ _react.default.createElement("script", {
                 key: file,
-                src: `${assetPrefix}/_next/${encodeURI(file)}${devOnlyCacheBusterQueryString}`,
+                src: `${assetPrefix}/.next/${encodeURI(file)}${devOnlyCacheBusterQueryString}`,
                 nonce: this.props.nonce,
                 crossOrigin: this.props.crossOrigin || crossOrigin
             })) : null, disableRuntimeJS ? null : /*#__PURE__*/ _react.default.createElement("script", {

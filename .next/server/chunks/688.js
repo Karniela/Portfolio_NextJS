@@ -9,7 +9,7 @@ exports.modules = {
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"src":"/_next/static/media/profile.82b751c8.png","height":1341,"width":1340,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAMAAADz0U65AAAAOVBMVEXs7OyLi4vz8/PGxsbn5+dBQUF7e3sVFRUoKCjg4OACAgI3NzdtbW2bm5v///9RUVG8vLxYWFhiYmIoPykuAAAACXBIWXMAAAsSAAALEgHS3X78AAAAPElEQVQImQXBhwHAMAgEsbMNPLik7T9sJOjjDTCw7fn0AjvtGxTWmzsUXDF1qqid0lyDppTWDO5cmSH/ATUrAae8KEvZAAAAAElFTkSuQmCC","blurWidth":8,"blurHeight":8});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"src":"/.next/static/media/profile.82b751c8.png","height":1341,"width":1340,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAMAAADz0U65AAAAOVBMVEXs7OyLi4vz8/PGxsbn5+dBQUF7e3sVFRUoKCjg4OACAgI3NzdtbW2bm5v///9RUVG8vLxYWFhiYmIoPykuAAAACXBIWXMAAAsSAAALEgHS3X78AAAAPElEQVQImQXBhwHAMAgEsbMNPLik7T9sJOjjDTCw7fn0AjvtGxTWmzsUXDF1qqid0lyDppTWDO5cmSH/ATUrAae8KEvZAAAAAElFTkSuQmCC","blurWidth":8,"blurHeight":8});
 
 /***/ }),
 

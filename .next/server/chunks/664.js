@@ -17,17 +17,17 @@ function _asyncToGenerator(fn) {
         var self = this, args = arguments;
         return new Promise(function(resolve, reject) {
             var gen = fn.apply(self, args);
-            function _next(value) {
-                asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
+            function .next(value) {
+                asyncGeneratorStep(gen, resolve, reject, .next, _throw, "next", value);
             }
             function _throw(err) {
-                asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
+                asyncGeneratorStep(gen, resolve, reject, .next, _throw, "throw", err);
             }
-            _next(undefined);
+            .next(undefined);
         });
     };
 }
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
+function asyncGeneratorStep(gen, resolve, reject, .next, _throw, key, arg) {
     try {
         var info = gen[key](arg);
         var value = info.value;
@@ -38,7 +38,7 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
     if (info.done) {
         resolve(value);
     } else {
-        Promise.resolve(value).then(_next, _throw);
+        Promise.resolve(value).then(.next, _throw);
     }
 }
 
@@ -933,7 +933,7 @@ function getFilesForRoute(assetPrefix, route) {
         if (!(route in manifest)) {
             throw markAssetError(new Error(`Failed to lookup route: ${route}`));
         }
-        const allFiles = manifest[route].map((entry)=>assetPrefix + "/_next/" + encodeURI(entry));
+        const allFiles = manifest[route].map((entry)=>assetPrefix + "/.next/" + encodeURI(entry));
         return {
             scripts: allFiles.filter((v)=>v.endsWith(".js")).map((v)=>(0, _trustedTypes).__unsafeCreateTrustedScriptURL(v)),
             css: allFiles.filter((v)=>v.endsWith(".css"))
