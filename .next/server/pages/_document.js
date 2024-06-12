@@ -101,7 +101,7 @@ function getPolyfillScripts(context, props) {
             nonce: props.nonce,
             crossOrigin: props.crossOrigin || crossOrigin,
             noModule: true,
-            src: `${assetPrefix}/_next/${polyfill}${devOnlyCacheBusterQueryString}`
+            src: `${assetPrefix}/.next/${polyfill}${devOnlyCacheBusterQueryString}`
         }));
 }
 function hasComponentProps(child) {
@@ -140,7 +140,7 @@ function getDynamicChunks(context, props, files) {
             async: !isDevelopment && disableOptimizedLoading,
             defer: !disableOptimizedLoading,
             key: file,
-            src: `${assetPrefix}/_next/${encodeURI(file)}${devOnlyCacheBusterQueryString}`,
+            src: `${assetPrefix}/.next/${encodeURI(file)}${devOnlyCacheBusterQueryString}`,
             nonce: props.nonce,
             crossOrigin: props.crossOrigin || crossOrigin
         });
@@ -157,7 +157,7 @@ function getScripts(context, props, files) {
     ].map((file)=>{
         return /*#__PURE__*/ _react.default.createElement("script", {
             key: file,
-            src: `${assetPrefix}/_next/${encodeURI(file)}${devOnlyCacheBusterQueryString}`,
+            src: `${assetPrefix}/.next/${encodeURI(file)}${devOnlyCacheBusterQueryString}`,
             nonce: props.nonce,
             async: !isDevelopment && disableOptimizedLoading,
             defer: !disableOptimizedLoading,
@@ -184,7 +184,7 @@ function getPreNextWorkerScripts(context, props) {
             dangerouslySetInnerHTML: {
                 __html: `
             partytown = {
-              lib: "${assetPrefix}/_next/static/~partytown/"
+              lib: "${assetPrefix}/.next/static/~partytown/"
             };
           `
             }
@@ -276,7 +276,7 @@ class Head extends _react.Component {
                     key: `${file}-preload`,
                     nonce: this.props.nonce,
                     rel: "preload",
-                    href: `${assetPrefix}/_next/${encodeURI(file)}${devOnlyCacheBusterQueryString}`,
+                    href: `${assetPrefix}/.next/${encodeURI(file)}${devOnlyCacheBusterQueryString}`,
                     as: "style",
                     crossOrigin: this.props.crossOrigin || crossOrigin
                 }));
@@ -286,7 +286,7 @@ class Head extends _react.Component {
                 key: file,
                 nonce: this.props.nonce,
                 rel: "stylesheet",
-                href: `${assetPrefix}/_next/${encodeURI(file)}${devOnlyCacheBusterQueryString}`,
+                href: `${assetPrefix}/.next/${encodeURI(file)}${devOnlyCacheBusterQueryString}`,
                 crossOrigin: this.props.crossOrigin || crossOrigin,
                 "data-n-g": isUnmanagedFile ? undefined : isSharedFile ? "" : undefined,
                 "data-n-p": isUnmanagedFile ? undefined : isSharedFile ? undefined : ""
@@ -306,7 +306,7 @@ class Head extends _react.Component {
             return /*#__PURE__*/ _react.default.createElement("link", {
                 rel: "preload",
                 key: file,
-                href: `${assetPrefix}/_next/${encodeURI(file)}${devOnlyCacheBusterQueryString}`,
+                href: `${assetPrefix}/.next/${encodeURI(file)}${devOnlyCacheBusterQueryString}`,
                 as: "script",
                 nonce: this.props.nonce,
                 crossOrigin: this.props.crossOrigin || crossOrigin
@@ -332,7 +332,7 @@ class Head extends _react.Component {
                     key: file,
                     nonce: this.props.nonce,
                     rel: "preload",
-                    href: `${assetPrefix}/_next/${encodeURI(file)}${devOnlyCacheBusterQueryString}`,
+                    href: `${assetPrefix}/.next/${encodeURI(file)}${devOnlyCacheBusterQueryString}`,
                     as: "script",
                     crossOrigin: this.props.crossOrigin || crossOrigin
                 })), 
@@ -396,7 +396,7 @@ class Head extends _react.Component {
         }).filter(Boolean);
     }
     render() {
-        const { styles , ampPath , inAmpMode , hybridAmp , canonicalBase , __NEXT_DATA__ , dangerousAsPath , headTags , unstable_runtimeJS , unstable_JsPreload , disableOptimizedLoading , optimizeCss , optimizeFonts ,  } = this.context;
+        const { styles , ampPath , inAmpMode , hybridAmp , canonicalBase , _.next_DATA__ , dangerousAsPath , headTags , unstable_runtimeJS , unstable_JsPreload , disableOptimizedLoading , optimizeCss , optimizeFonts ,  } = this.context;
         const disableRuntimeJS = unstable_runtimeJS === false;
         const disableJsPreload = unstable_JsPreload === false || !disableOptimizedLoading;
         this.context.docComponentsRendered.Head = true;
@@ -445,7 +445,7 @@ class Head extends _react.Component {
                     }
                 }
                 if (badProp) {
-                    console.warn(`Found conflicting amp tag "${child.type}" with conflicting prop ${badProp} in ${__NEXT_DATA__.page}. https://nextjs.org/docs/messages/conflicting-amp-tag`);
+                    console.warn(`Found conflicting amp tag "${child.type}" with conflicting prop ${badProp} in ${_.next_DATA__.page}. https://nextjs.org/docs/messages/conflicting-amp-tag`);
                     return null;
                 }
             } else {
@@ -456,7 +456,7 @@ class Head extends _react.Component {
             }
             return child;
         });
-        const files = getDocumentFiles(this.context.buildManifest, this.context.__NEXT_DATA__.page,  true && inAmpMode);
+        const files = getDocumentFiles(this.context.buildManifest, this.context._.next_DATA__.page,  true && inAmpMode);
         var _nonce, _nonce1;
         return /*#__PURE__*/ _react.default.createElement("head", Object.assign({}, getHeadHTMLProps(this.props)), this.context.isDevelopment && /*#__PURE__*/ _react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/ _react.default.createElement("style", {
             "data-next-hide-fouc": true,
@@ -511,12 +511,12 @@ class Head extends _react.Component {
         }), this.context.isDevelopment && // ordering matches production
         // (by default, style-loader injects at the bottom of <head />)
         /*#__PURE__*/ _react.default.createElement("noscript", {
-            id: "__next_css__DO_NOT_USE__"
+            id: "_.next_css__DO_NOT_USE__"
         }), styles || null), /*#__PURE__*/ _react.default.createElement(_react.default.Fragment, {}, ...headTags || []));
     }
 }
 exports.Head = Head;
-function handleDocumentScriptLoaderItems(scriptLoader, __NEXT_DATA__, props) {
+function handleDocumentScriptLoaderItems(scriptLoader, _.next_DATA__, props) {
     var ref10, ref7, ref8, ref9;
     if (!props.children) return;
     const scriptLoaderItems = [];
@@ -538,7 +538,7 @@ function handleDocumentScriptLoaderItems(scriptLoader, __NEXT_DATA__, props) {
         var ref;
         if (!child) return;
         // When using the `next/script` component, register it in script loader.
-        if ((ref = child.type) == null ? void 0 : ref.__nextScript) {
+        if ((ref = child.type) == null ? void 0 : ref._.nextScript) {
             if (child.props.strategy === "beforeInteractive") {
                 scriptLoader.beforeInteractive = (scriptLoader.beforeInteractive || []).concat([
                     {
@@ -556,7 +556,7 @@ function handleDocumentScriptLoaderItems(scriptLoader, __NEXT_DATA__, props) {
             }
         }
     });
-    __NEXT_DATA__.scriptLoader = scriptLoaderItems;
+    _.next_DATA__.scriptLoader = scriptLoaderItems;
 }
 class NextScript extends _react.Component {
     static contextType = _htmlContext.HtmlContext;
@@ -573,18 +573,18 @@ class NextScript extends _react.Component {
         return getPolyfillScripts(this.context, this.props);
     }
     static getInlineScriptSource(context) {
-        const { __NEXT_DATA__ , largePageDataBytes  } = context;
+        const { _.next_DATA__ , largePageDataBytes  } = context;
         try {
-            const data = JSON.stringify(__NEXT_DATA__);
+            const data = JSON.stringify(_.next_DATA__);
             const bytes =  false ? 0 : Buffer.from(data).byteLength;
             const prettyBytes = (__webpack_require__(5955)/* ["default"] */ .Z);
             if (largePageDataBytes && bytes > largePageDataBytes) {
-                console.warn(`Warning: data for page "${__NEXT_DATA__.page}"${__NEXT_DATA__.page === context.dangerousAsPath ? "" : ` (path "${context.dangerousAsPath}")`} is ${prettyBytes(bytes)} which exceeds the threshold of ${prettyBytes(largePageDataBytes)}, this amount of data can reduce performance.\nSee more info here: https://nextjs.org/docs/messages/large-page-data`);
+                console.warn(`Warning: data for page "${_.next_DATA__.page}"${_.next_DATA__.page === context.dangerousAsPath ? "" : ` (path "${context.dangerousAsPath}")`} is ${prettyBytes(bytes)} which exceeds the threshold of ${prettyBytes(largePageDataBytes)}, this amount of data can reduce performance.\nSee more info here: https://nextjs.org/docs/messages/large-page-data`);
             }
             return (0, _htmlescape).htmlEscapeJsonString(data);
         } catch (err) {
             if ((0, _isError).default(err) && err.message.indexOf("circular structure") !== -1) {
-                throw new Error(`Circular structure in "getInitialProps" result of page "${__NEXT_DATA__.page}". https://nextjs.org/docs/messages/circular-structure`);
+                throw new Error(`Circular structure in "getInitialProps" result of page "${_.next_DATA__.page}". https://nextjs.org/docs/messages/circular-structure`);
             }
             throw err;
         }
@@ -603,7 +603,7 @@ class NextScript extends _react.Component {
                 ...buildManifest.ampDevFiles, 
             ];
             return /*#__PURE__*/ _react.default.createElement(_react.default.Fragment, null, disableRuntimeJS ? null : /*#__PURE__*/ _react.default.createElement("script", {
-                id: "__NEXT_DATA__",
+                id: "_.next_DATA__",
                 type: "application/json",
                 nonce: this.props.nonce,
                 crossOrigin: this.props.crossOrigin || crossOrigin,
@@ -613,21 +613,21 @@ class NextScript extends _react.Component {
                 "data-ampdevmode": true
             }), ampDevFiles.map((file)=>/*#__PURE__*/ _react.default.createElement("script", {
                     key: file,
-                    src: `${assetPrefix}/_next/${file}${devOnlyCacheBusterQueryString}`,
+                    src: `${assetPrefix}/.next/${file}${devOnlyCacheBusterQueryString}`,
                     nonce: this.props.nonce,
                     crossOrigin: this.props.crossOrigin || crossOrigin,
                     "data-ampdevmode": true
                 })));
         }
         if (false) {}
-        const files = getDocumentFiles(this.context.buildManifest, this.context.__NEXT_DATA__.page,  true && inAmpMode);
+        const files = getDocumentFiles(this.context.buildManifest, this.context._.next_DATA__.page,  true && inAmpMode);
         return /*#__PURE__*/ _react.default.createElement(_react.default.Fragment, null, !disableRuntimeJS && buildManifest.devFiles ? buildManifest.devFiles.map((file)=>/*#__PURE__*/ _react.default.createElement("script", {
                 key: file,
-                src: `${assetPrefix}/_next/${encodeURI(file)}${devOnlyCacheBusterQueryString}`,
+                src: `${assetPrefix}/.next/${encodeURI(file)}${devOnlyCacheBusterQueryString}`,
                 nonce: this.props.nonce,
                 crossOrigin: this.props.crossOrigin || crossOrigin
             })) : null, disableRuntimeJS ? null : /*#__PURE__*/ _react.default.createElement("script", {
-            id: "__NEXT_DATA__",
+            id: "_.next_DATA__",
             type: "application/json",
             nonce: this.props.nonce,
             crossOrigin: this.props.crossOrigin || crossOrigin,
@@ -639,9 +639,9 @@ class NextScript extends _react.Component {
 }
 exports.NextScript = NextScript;
 function Html(props) {
-    const { inAmpMode , docComponentsRendered , locale , scriptLoader , __NEXT_DATA__ ,  } = (0, _react).useContext(_htmlContext.HtmlContext);
+    const { inAmpMode , docComponentsRendered , locale , scriptLoader , _.next_DATA__ ,  } = (0, _react).useContext(_htmlContext.HtmlContext);
     docComponentsRendered.Html = true;
-    handleDocumentScriptLoaderItems(scriptLoader, __NEXT_DATA__, props);
+    handleDocumentScriptLoaderItems(scriptLoader, _.next_DATA__, props);
     return /*#__PURE__*/ _react.default.createElement("html", Object.assign({}, props, {
         lang: props.lang || locale || undefined,
         amp:  true && inAmpMode ? "" : undefined,
