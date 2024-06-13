@@ -29,7 +29,7 @@ export const navigation = {
   ],
 }
 export const intro = {
-  title: "Hey, I'm Hashir",
+  title: "Hey, I'm Karniela",
   description: "A Computer Engineer creating mobile apps and static websites.",
   image: profile.src,
   buttons: [
@@ -40,7 +40,7 @@ export const intro = {
     },
     {
       title: "Resume",
-      link: "https://docs.google.com/document/d/13_PWdhThMr6roxb-UFiJj4YAFOj8e_bv3Vx9UHQdyBQ/edit?usp=sharing",
+      link: "\",
       isPrimary: false,
     },
   ],
@@ -121,7 +121,7 @@ export const contact = {
   buttons: [
     {
       title: "Email Me",
-      link: "mailto:hashirshoaeb@gmail.com",
+      link: "karniela.liao@gmail.com",
       isPrimary: true,
     },
     {
@@ -135,7 +135,7 @@ export const contact = {
 // SEARCH ENGINE 
 export const SEO = {
   // 50 - 60 char  
-  title: "Hashir Shoaib | Computer Engineer | Flutter | Reactjs developer",
+  title: "Ya Chi (Karniela) Liao",
   description: "I create mobile apps and static websites. I graduated from National University of Sciences and Technology (NUST) in 2020 with a degree in Computer Engineering.",
   image: profile.src,
 }
